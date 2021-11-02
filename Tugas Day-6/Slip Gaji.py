@@ -1,10 +1,10 @@
 anak1 = 2
 anak2 = 5
+agama1 = "Islam"
+agama2 = "Kristen"
 
 pegawai = ["Ahmad", "Alex"]
-agama = ["Islam", "Kristen"]
-
-gajiPokok = [4000000, 6000000]
+gajiPokok = [6000000, 6000000]
 tunjanganJabatan = [number * 0.20 for number in gajiPokok]
 tunjanganKeluarga1 = gajiPokok
 
@@ -28,8 +28,10 @@ gajiKotor2 = [gajiPokok[1], tunjanganJabatan[1], tunjanganKeluarga2[1]]
 gajiKotorSum1 = sum(map(float, gajiKotor1))
 gajiKotorSum2 = sum(map(float, gajiKotor2))
 
-zakatProfesi1 = (0, 0.025)[gajiKotorSum1 >= 6000000 and agama == "Islam"]
-zakatProfesi2 = (0, 0.025)[gajiKotorSum2 >= 6000000 and agama == "Islam"]
+zakatProfesi1 = (0, gajiKotorSum1 *
+                 0.025)[gajiKotorSum1 >= 6000000.0 and agama1 == "Islam"]
+zakatProfesi2 = (0, gajiKotorSum2 *
+                 0.025)[gajiKotorSum2 >= 6000000.0 and agama2 == "Islam"]
 
 gajiBersih1 = gajiKotorSum1 - zakatProfesi1
 gajiBersih2 = gajiKotorSum2 - zakatProfesi2
@@ -37,7 +39,7 @@ gajiBersih2 = gajiKotorSum2 - zakatProfesi2
 print("SLIP GAJI PT. XYZ")
 print("-" * 10)
 print("Nama Pegawai \t\t:", pegawai[0], "\n"
-      "Agama \t\t\t:", agama[0], "\n"
+      "Agama \t\t\t:", agama1, "\n"
       "Jumlah Anak \t\t:", anak1, "\n"
       "Gaji Pokok \t\t: Rp.", gajiPokok[0], "\n"
       "Tunjangan Jabatan \t: Rp.", tunjanganJabatan[0], "\n"
@@ -49,7 +51,7 @@ print("Nama Pegawai \t\t:", pegawai[0], "\n"
 print("SLIP GAJI PT. XYZ")
 print("-" * 10)
 print("Nama Pegawai \t\t:", pegawai[1], "\n"
-      "Agama \t\t\t:", agama[1], "\n"
+      "Agama \t\t\t:", agama2, "\n"
       "Jumlah Anak \t\t:", anak2, "\n"
       "Gaji Pokok \t\t: Rp.", gajiPokok[1], "\n"
       "Tunjangan Jabatan \t: Rp.", tunjanganJabatan[1], "\n"
